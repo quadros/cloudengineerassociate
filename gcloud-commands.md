@@ -55,15 +55,15 @@
 
 8. SPLIT TRAFFIC (IP_ADDRESS, COOKIE AND RANDOM) - GOOGAPPUID cookie
 
-  8.1 SHOW VERSIONS
+   8.1 SHOW VERSIONS
 
-    gcloud app versions list
+       gcloud app versions list
+   
+   8.2 SPLIT
 
-  8.2 SPLIT
+       gcloud app services set-traffic serv --splits version=.4,version=.6
 
-    gcloud app services set-traffic serv --splits version=.4,version=.6
-
-    ex.: gcloud app services set-traffic default --splits 20210208t202955=.4,20210208t210644=.6 --split-by=cookie
+       ex.: gcloud app services set-traffic default --splits 20210208t202955=.4,20210208t210644=.6 --split-by=cookie
 
 # NETWORKS
 
