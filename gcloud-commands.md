@@ -8,8 +8,10 @@
    
    gcloud app deploy app.yml
 
-    --version to specify a custom version ID\n
+    --version to specify a custom version ID
+    
     --project to specify the project ID to use for this app
+    
     --no-promote TO DEPLOY THE APP WITHOUT ROUTING TRAFFIC TO IT
 
 3. LOGS
