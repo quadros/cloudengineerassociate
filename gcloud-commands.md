@@ -30,7 +30,7 @@
 
 7. AUTO SCALLING
 
-   7.1 DYNAMIC
+ 7.1 DYNAMIC
      
       7.1.1 AUTO_SCALLING
 
@@ -48,10 +48,10 @@
     	     max_instances: 10
     	     idle_timeout: 20m
 
-   7.2 RESIDENT
+ 7.2 RESIDENT
 
-       manual_scaling:
-         instances: 7
+     manual_scaling:
+       instances: 7
 
 8. SPLIT TRAFFIC (IP_ADDRESS, COOKIE AND RANDOM) - GOOGAPPUID cookie
 
