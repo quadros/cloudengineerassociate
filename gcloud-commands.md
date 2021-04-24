@@ -169,11 +169,11 @@ gcloud compute networks peerings create peer-project-excluir \
 
 3. Associate a member to role in a project (policies)
                                                            (can be serviceaccount:)
-    gcloud project add-iam-policy-binding <project-name> --member=user:knee2021@gmail.com --role=roles/ ...
+    gcloud project add-iam-policy-binding <project-name> --member=user:user@gmail.com --role=roles/ ...
 
     ex.:
 
-    gcloud projects add-iam-policy-binding cgp-enginer-certified --member=user:knee2021@gmail.com --role=roles/compute.networkUser
+    gcloud projects add-iam-policy-binding cgp-enginer-certified --member=user:user@gmail.com --role=roles/compute.networkUser
 
 4. show permissions associate a role
 
