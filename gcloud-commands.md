@@ -50,8 +50,8 @@
 
    7.2 RESIDENT
 
-      manual_scaling:
-        instances: 7
+       manual_scaling:
+         instances: 7
 
 8. SPLIT TRAFFIC (IP_ADDRESS, COOKIE AND RANDOM) - GOOGAPPUID cookie
 
