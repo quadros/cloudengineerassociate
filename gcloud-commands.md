@@ -2,31 +2,31 @@
 
 1. CONFIGURE AND WORK APPENGINE
  
-      gcloud components install app-engine-python
+       gcloud components install app-engine-python
 
 2. DEPLOY APP
    
-   gcloud app deploy app.yml
+       gcloud app deploy app.yml
 
-    --version to specify a custom version ID
+       --version to specify a custom version ID
     
-    --project to specify the project ID to use for this app
+       --project to specify the project ID to use for this app
     
-    --no-promote TO DEPLOY THE APP WITHOUT ROUTING TRAFFIC TO IT
+       --no-promote TO DEPLOY THE APP WITHOUT ROUTING TRAFFIC TO IT
 
 3. LOGS
    
-   gcloud app logs read
+       gcloud app logs read
    
-   gcloud app logs tail
+       gcloud app logs tail
 
 4. BROWSER
 
-  gcloud app browser
+       gcloud app browser
 
 5. STOP
 
-   gcloud app versions stop v1 v2
+       gcloud app versions stop v1 v2
 
 7. AUTO SCALLING
 
@@ -69,58 +69,58 @@
 
 1. CREATE NETWORK
 
-    gcloud compute networks create ace-exam-vpc1 --subnet-mode=auto
+       gcloud compute networks create ace-exam-vpc1 --subnet-mode=auto
 
 2. CREATE A CUSTOM VPC
 
-    gcloud compute networks create vpc-excluir --subnet-mode=custom
+       gcloud compute networks create vpc-excluir --subnet-mode=custom
 
-    gcloud compute networks subnets create subnet-excluir \
-        --network=vpc-excluir \
-        --region=us-west2 \
-        --range=10.10.0.0/16 \
-        --enable-private-ip-google-access \ (dynamic route - regional route)
-        --enable-flow-logs
+       gcloud compute networks subnets create subnet-excluir \
+         --network=vpc-excluir \
+         --region=us-west2 \
+         --range=10.10.0.0/16 \
+         --enable-private-ip-google-access \ (dynamic route - regional route)
+         --enable-flow-logs
 
 2. SHARED VPC1
 
- 2.1 before assign the Shared VPC Admin role, which uses the descriptor roles/compute.xpnAdmin
+   2.1 before assign the Shared VPC Admin role, which uses the descriptor roles/compute.xpnAdmin
 
-  gcloud ORGANIZATIONS add-iam-policy-binding [ORG_ID] --member='user:[EMAIL]' --role="roles/compute.xpnAdmin"
+       gcloud ORGANIZATIONS add-iam-policy-binding [ORG_ID] --member='user:[EMAIL]' --role="roles/compute.xpnAdmin"
 
-  OR
+       OR
 
-  gcloud RESOURCE-MANAGER folders add-iam-policy-binding [FOLDER_ID] --member='user:[EMAIL_ADDRESS]' --role='roles/compute.xpnAdmin'
+       gcloud RESOURCE-MANAGER folders add-iam-policy-binding [FOLDER_ID] --member='user:[EMAIL_ADDRESS]' --role='roles/compute.xpnAdmin'
 
- 2.2 Once YOU HAVE SET THE SHARED VPC ADMIN ROLE AT THE ORGANIZATION LEVEL, you can issue the shared-vpc command
+   2.2 Once *YOU HAVE SET THE SHARED VPC ADMIN ROLE AT THE ORGANIZATION LEVEL*, you can issue the shared-vpc command
 
-   gcloud compute shared-vpc enable [HOST_PROJECT_ID]
+       gcloud compute shared-vpc enable [HOST_PROJECT_ID]
 
- 2.3 Now that the shared VPC is created, YOU CAN ASSOCIATE PROJECTS using the gcloud compute shared-vpc associate-projects command.
+   2.3 Now that the shared VPC is created, *YOU CAN ASSOCIATE PROJECTS* using the gcloud compute shared-vpc associate-projects command.
 
-  gcloud compute shared-vpc associated-projects add [service_project_id] --host-project [host_project_id]
+       gcloud compute shared-vpc associated-projects add [service_project_id] --host-project [host_project_id]
 
 3. PEERING
 
-[REDE A PARA REDE B]
-gcloud compute networks peerings create peer-project-excluir \
---network networkA \
---peer-project ace-projectB \
---peer-network networkB \
---auto-create-routes
+       [REDE A PARA REDE B]
+       gcloud compute networks peerings create peer-project-excluir \
+         --network networkA \
+         --peer-project ace-projectB \
+         --peer-network networkB \
+         --auto-create-routes
 
-[E O INVERSO AGORA. REDE B PARA REDE A]
-gcloud compute networks peerings create peer-project-excluir \
---network networkB \
---peer-project ace-projectA \
---peer-network networkA \
---auto-create-routes
+       [E O INVERSO AGORA. REDE B PARA REDE A]
+       gcloud compute networks peerings create peer-project-excluir \
+         --network networkB \
+         --peer-project ace-projectA \
+         --peer-network networkA \
+         --auto-create-routes
 
 4. FIREWALL RULES
 
-  gcloud compute firewall-rules create <NAME> --network=<NET-WORKNAME> --allow
+       gcloud compute firewall-rules create <NAME> --network=<NET-WORKNAME> --allow
 
-  ex.: gcloud compute firewall-rules create ace-rule-excluir2 --network=vpc-excluir --allow tcp:20000-25000
+       ex.: gcloud compute firewall-rules create ace-rule-excluir2 --network=vpc-excluir --allow tcp:20000-25000
 
 # CLOUD DNS
 
