@@ -34,19 +34,19 @@
      
      7.1.1 AUTO_SCALLING
 
-     automatic_scaling
-   	  target_cpu_utilization: 0.65
-   	  min_instances: 5
-   	  max_instances: 100
-   	  min_pending_latency: 30ms #default value
-   	  max_pending_latency:  automatic
-   	  max_concurrent_requests: 50
+       automatic_scaling
+   	     target_cpu_utilization: 0.65
+   	     min_instances: 5
+   	     max_instances: 100
+   	     min_pending_latency: 30ms #default value
+   	     max_pending_latency:  automatic
+   	     max_concurrent_requests: 50
 
       7.1.2 BASIC_SCALLING
 
-      basic_scaling
-    	  max_instances: 10
-    	  idle_timeout: 20m
+       basic_scaling
+    	    max_instances: 10
+    	    idle_timeout: 20m
 
  7.2 RESIDENT
 
