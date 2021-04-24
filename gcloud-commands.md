@@ -26,12 +26,12 @@
 
 5. STOP
 
-  gcloud app versions stop v1 v2
+   gcloud app versions stop v1 v2
 
 7. AUTO SCALLING
 
- 7.1 DYNAMIC
-
+   7.1 DYNAMIC
+     
      7.1.1 AUTO_SCALLING
 
      automatic_scaling
