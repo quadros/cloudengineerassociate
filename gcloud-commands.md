@@ -1,11 +1,9 @@
 # APPENGINE
 
 1. CONFIGURE AND WORK APPENGINE
-
   	gcloud components install app-engine-python
 
 2. DEPLOY APP
-
     gcloud app deploy app.yml
 
     --version to specify a custom version ID
