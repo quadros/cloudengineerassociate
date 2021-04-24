@@ -126,26 +126,27 @@
 
 1. CREATE DNS
 
-  1.1 VISIBILITY - PRIVATE (not optional: networks, description)
+   1.1 VISIBILITY - PRIVATE (not optional: networks, description)
 
-    gcloud dns managed-zones create mydns --dns-name=myquadroszone.com --description=test --visibility=private --networks=default
+       gcloud dns managed-zones create mydns --dns-name=myquadroszone.com --description=test --visibility=private --networks=default
 
-  1.2 VISIBILITY PUBLIC (not optional: dnssec-state)
+   1.2 VISIBILITY PUBLIC (not optional: dnssec-state)
 
-    gcloud dns managed-zones create mydns --dns-name=mydns.com --description=teste --visibility=public --dnssec-state=on
+       gcloud dns managed-zones create mydns --dns-name=mydns.com --description=teste --visibility=public --dnssec-state=on
 
 2. Add registries on DNS
 
-    2.1 TYPE=A
+   2.1 TYPE=A
 
-    gcloud dns record-sets transaction start --zone=[dns-zone-name]
-    gcloud dns record-sets transaction add 192.168.0.1 --name=[meuendereco].zone.com --type=A --ttl=300 --zone=[dns-zone-name]
-    gcloud dns record-sets transaction execute --zone=[dns-zone-name]
+       gcloud dns record-sets transaction start --zone=[dns-zone-name]
+       gcloud dns record-sets transaction add 192.168.0.1 --name=[meuendereco].zone.com --type=A --ttl=300 --zone=[dns-zone-name]
+       gcloud dns record-sets transaction execute --zone=[dns-zone-name]
 
-    2.2 TYPE=CNAME
-    gcloud dns record-sets transaction start --zone=[dns-zone-name]
-    gcloud dns record-sets transaction add "server.example.com" "teteu.myquadroszone.com" --name=myquadroszone.com. --ttl=14400 --type=CNAME --zone=MANAGED_ZONE
-    gcloud dns record-sets transaction execute --zone=[dns-zone-name]
+   2.2 TYPE=CNAME
+    
+       gcloud dns record-sets transaction start --zone=[dns-zone-name]
+       gcloud dns record-sets transaction add "server.example.com" "teteu.myquadroszone.com" --name=myquadroszone.com. --ttl=14400 --type=CNAME --   zone=MANAGED_ZONE
+       gcloud dns record-sets transaction execute --zone=[dns-zone-name]
 
 # MANING IP (CLASSLESS)
 
