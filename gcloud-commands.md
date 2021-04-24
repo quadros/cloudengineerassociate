@@ -15,10 +15,10 @@
     --no-promote TO DEPLOY THE APP WITHOUT ROUTING TRAFFIC TO IT
 
 3. LOGS
-
-  gcloud app logs read
-
-  gcloud app logs tail
+   
+   gcloud app logs read
+   
+   gcloud app logs tail
 
 4. BROWSER
 
